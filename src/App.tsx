@@ -1,11 +1,18 @@
-import { Button } from "@/components/ui/button"
+import { Routes, Route } from "react-router-dom";
+import CryptoMarket from "./pages/crypto/CryptoMarket";
+import ExchangesList from "./pages/exchanges/ExchangesList";
+import { HeaderMenu } from "./components/header/HeaderMenu";
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
-  )
+    <>
+      <HeaderMenu />
+      <Routes>
+        <Route path="/" element={<CryptoMarket />} />
+        <Route path="/exchanges" element={<ExchangesList />} />
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
